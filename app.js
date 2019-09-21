@@ -1,49 +1,23 @@
-/*TODO:
-- Links for each title to jsonception
+// pls work mr. program
 
-*/
-
-var data;
-
-// JSON 1 HERE
-fetch('https://ghibliapi.herokuapp.com/films').then(function(response)
-{
+fetch('http://1e14c6f0.ngrok.io/restaurants').then(function(response) {
   return response.json();
-})
-  .then(function(json)
-{
+}).then(function(json) {
+
   onInit(json)
-})
-  .catch(function(err)
-{
+
+}).catch(function(err) {
   console.log(err.message);
 });
+
 
 
 function onInit(json)
 {
 
-
+  url = "#"
   for (var i = 0; i < json.length; i++)
   {
-    document.getElementById('res-list').innerHTML += '<li> <a id="res"' + url + '>' + json[i].title + "</a> </li>";
+    document.getElementById('res-list').innerHTML += '<li> <a id="res" href="' + url + '">' + json[i].restaurant_name + "</a> </li>";
   }
 }
-
-
-
-// JSON 2
-/*fetch('https://ghibliapi.herokuapp.com/films').then(function(response)
-{
-  return response.json();
-})
-  .then(function(json)
-{
-  // another json my dude
-
-})
-  .catch(function(err)
-{
-  console.log(err.message);
-});
-*/
