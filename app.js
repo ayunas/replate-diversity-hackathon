@@ -1,9 +1,10 @@
 /*
 */
 
-fetch('http://1e14c6f0.ngrok.io/restaurants').then(function(response) {
+fetch('https://e9abe383.ngrok.io/').then(function(response) {
   return response.json();
 }).then(function(json) {
+
 
   onInit(json)
 
@@ -21,9 +22,9 @@ function onInit(json)
     {
       document.getElementById('res-list').innerHTML += '<li> <a class="res" href="#' + /*url +*/ '">' + json[i].restaurant_name + "</a> </li>";
     }
-    
+
   } else
   {
-
+    
   }
 }
